@@ -36,9 +36,9 @@ Join them and hear for yourself what the code has to say!
 
 ## The Cypress code
 
-TBD
+TBD - put under a folder named `cypress`
 
 
 ## The Playwright code
 
-TBD
+TBD - put under a folder named `playwright`
