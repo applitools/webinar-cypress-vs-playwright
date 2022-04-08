@@ -66,7 +66,7 @@ test.describe('Playwright', () => {
         await page.locator("id=prompt-button").click();
     });
 
-    test('Round 7: Navigation to New Window', async ({ page, context}) => {
+    test('Round 7: Navigation to New Windows', async ({ page, context}) => {
         await page.goto("https://kitchen.applitools.com/ingredients/links");
 
         let [newPage] = await Promise.all([

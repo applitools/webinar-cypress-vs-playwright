@@ -34,7 +34,7 @@ describe('Cypress', () => {
         
     });
 
-    it('Round 7: Navigation to New Window', () => {
+    it('Round 7: Navigation to New Windows', () => {
         
     });
 
