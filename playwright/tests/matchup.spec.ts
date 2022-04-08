@@ -27,7 +27,7 @@ test.describe('Playwright', () => {
         await page.locator("id=photo-upload").setInputFiles(picPath);
     });
 
-    test('Round 4: iFrames', async ({ page }) => {
+    test('Round 4: Inline Frames', async ({ page }) => {
         await page.goto("https://kitchen.applitools.com/ingredients/iframe");
         await expect(page.frameLocator("id=the-kitchen-table").locator("id=fruits-vegetables")).toBeVisible();
     });
