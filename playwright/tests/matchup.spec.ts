@@ -22,7 +22,7 @@ test.describe('Playwright', () => {
     });
 
     test('Round 3: File Upload', async ({ page }) => {
-        let picPath = path.join("..", "images", "banner.jpeg");
+        let picPath = path.join("..", "images", "banner.png");
         await page.goto("https://kitchen.applitools.com/ingredients/file-picker");
         await page.locator("id=photo-upload").setInputFiles(picPath);
     });
