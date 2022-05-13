@@ -89,6 +89,8 @@ describe('Cypress', () => {
 
     cy.location('pathname')
       .should('eq', '/ingredients/table')
+
+    cy.get('#fruits-vegetables:visible').should('have.length', 1)
       
   });
 

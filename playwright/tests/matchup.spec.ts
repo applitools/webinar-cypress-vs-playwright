@@ -61,6 +61,7 @@ test.describe('Playwright', () => {
         ]);
         
         await newPage.waitForLoadState();
+        expect(newPage.url()).toContain('/ingredients/table');
         await expect(newPage.locator("id=fruits-vegetables")).toBeVisible();
     });
 
