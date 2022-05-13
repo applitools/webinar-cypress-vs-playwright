@@ -1,7 +1,0 @@
-{
-  "dependencies": {
-    "@types/node": "^17.0.25",
-    "cypress-iframe": "^1.0.1",
-    "dotenv": "^16.0.0"
-  }
-}
