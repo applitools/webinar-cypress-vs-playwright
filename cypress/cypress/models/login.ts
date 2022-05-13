@@ -1,5 +1,9 @@
 export const loginPage = {
 
+  username: '#username',
+  password: '#password',
+  log_in: '#log-in',
+
   /**
    * opens a login page
    */
@@ -15,9 +19,9 @@ export const loginPage = {
    */
   login(username: string, pass: string) {
 
-    cy.get('#username').type(username)
-    cy.get('#password').type(pass)
-    cy.get('#log-in').click()
+    cy.get(this.username).type(username)
+    cy.get(this.password).type(pass)
+    cy.get(this.log_in).click()
     return this
   }
 

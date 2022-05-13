@@ -109,9 +109,8 @@ describe('Cypress', () => {
       .load()
       .login('filip', 'i<3slovakia!')
 
-    cy.location('pathname')
-      .should('eq', '/app.html')
-      
+      cy.contains('.element-header', 'Financial Overview')
+
   });
 
 });
