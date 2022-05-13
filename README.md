@@ -38,9 +38,22 @@ Join them and hear for yourself what the code has to say!
 
 ## The Cypress code
 
-TBD - put under a folder named `cypress`
+The Cypress example code is located under the [`cypress`](cypress) directory.
+To run the tests:
+
+```
+$ npm install
+$ npx cypress run
+```
 
 
 ## The Playwright code
 
-TBD - put under a folder named `playwright`
+The Playwright example code is located under the [`playwright`](playwright) directory.
+To run the tests:
+
+```
+$ npm install
+$ npx playwright install
+$ npx playwright run
+```
