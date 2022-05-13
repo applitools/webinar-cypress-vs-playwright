@@ -9,7 +9,7 @@ describe('Cypress', () => {
     cy.visit('https://demo.applitools.com/')
 
     cy.get('#username').type('filip')
-    cy.get('#password').type(Cypress.env('pass'))
+    cy.get('#password').type('i<3slovakia!')
     cy.get('#log-in').click()
 
     cy.contains('.element-header', 'Financial Overview')
@@ -127,7 +127,7 @@ describe('Cypress', () => {
 
     loginPage
       .load()
-      .login('filip', Cypress.env('pass'))
+      .login('filip', 'i<3slovakia!')
 
     cy.location('pathname')
       .should('eq', '/app.html')

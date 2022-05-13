@@ -103,7 +103,8 @@ dist
 # TernJS port file
 .tern-port
 
-# Playwright
+# Playwright and Cypress results
 test-results/
 playwright-report/
 screenshots/
+videos/
