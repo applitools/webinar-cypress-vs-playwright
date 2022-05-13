@@ -1,5 +1,5 @@
 **WARNING: UPDATE THIS BANNER!**
-![Banner Cypress versus Playwright: Let the Code Speak!](images/banner.png)
+![Banner Cypress versus Playwright: Let the Code Speak!](banner.png)
 
 
 # Cypress versus Playwright: Let the Code Speak!

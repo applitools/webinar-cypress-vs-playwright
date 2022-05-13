@@ -17,7 +17,7 @@ test.describe('Playwright', () => {
 
     test('Round 2: File Upload', async ({ page }) => {
         await page.goto("https://kitchen.applitools.com/ingredients/file-picker");
-        await page.locator("id=photo-upload").setInputFiles("../images/banner.png");
+        await page.locator("id=photo-upload").setInputFiles("../banner.png");
     });
 
     test('Round 3: Inline Frames', async ({ page }) => {

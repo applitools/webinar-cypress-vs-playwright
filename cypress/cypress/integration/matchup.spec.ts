@@ -21,7 +21,7 @@ describe('Cypress', () => {
     cy.visit("https://kitchen.applitools.com/ingredients/file-picker");
 
     cy.get('#photo-upload')
-      .selectFile('../images/banner.png')
+      .selectFile('../banner.png')
       
   });
 
