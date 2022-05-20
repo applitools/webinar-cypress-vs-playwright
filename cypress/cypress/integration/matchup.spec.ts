@@ -16,16 +16,7 @@ describe('Cypress', () => {
       
   });
 
-  it('Round 2: File Upload', () => {
-
-    cy.visit("https://kitchen.applitools.com/ingredients/file-picker");
-
-    cy.get('#photo-upload')
-      .selectFile('../banner.png')
-      
-  });
-
-  it('Round 3: Inline Frames', () => {
+  it('Round 2: Inline Frames', () => {
 
     cy.visit('https://kitchen.applitools.com/ingredients/iframe')
 
@@ -35,7 +26,7 @@ describe('Cypress', () => {
       
   });
 
-  it('Round 4: Waiting', () => {
+  it('Round 3: Waiting', () => {
 
     cy.visit('https://automationbookstore.dev/')
 
@@ -44,7 +35,7 @@ describe('Cypress', () => {
       
   });
 
-  it('Round 5: Accept Alerts', () => {
+  it('Round 4: Accept Alerts', () => {
 
     cy.visit('https://kitchen.applitools.com/ingredients/alert')
 
@@ -55,7 +46,7 @@ describe('Cypress', () => {
       
   });
 
-  it('Round 5: Dismiss Alerts', () => {
+  it('Round 4: Dismiss Alerts', () => {
 
     const dismiss = () => false
     
@@ -66,7 +57,7 @@ describe('Cypress', () => {
       
   });
 
-  it('Round 5: Answer Prompts', () => {
+  it('Round 4: Answer Prompts', () => {
 
     cy.visit('https://kitchen.applitools.com/ingredients/alert', {
       onLoad(win: Window) {
@@ -79,7 +70,7 @@ describe('Cypress', () => {
       
   });
 
-  it('Round 6: Navigation to New Windows', () => {
+  it('Round 5: Navigation to New Windows', () => {
 
     cy.visit('https://kitchen.applitools.com/ingredients/links')
     
@@ -94,7 +85,7 @@ describe('Cypress', () => {
       
   });
 
-  it('Round 7: API Requests', () => {
+  it('Round 6: API Requests', () => {
 
     cy.request('https://kitchen.applitools.com/api/recipes')
       .then(({ status, body, duration }) => {
@@ -105,7 +96,7 @@ describe('Cypress', () => {
       
   });
 
-  it('Round 8: Page Objects', () => {
+  it('Round 7: Page Objects', () => {
 
     loginPage
       .load()

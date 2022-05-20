@@ -15,44 +15,44 @@ test.describe('Playwright', () => {
         await expect(page.locator(".element-header").nth(0)).toHaveText("Financial Overview");
     });
 
-    test('Round 2: File Upload', async ({ page }) => {
-        await page.goto("https://kitchen.applitools.com/ingredients/file-picker");
-        await page.locator("id=photo-upload").setInputFiles("../banner.png");
-    });
-
-    test('Round 3: Inline Frames', async ({ page }) => {
+    test('Round 2: Inline Frames', async ({ page }) => {
         await page.goto("https://kitchen.applitools.com/ingredients/iframe");
-        await expect(page.frameLocator("id=the-kitchen-table").locator("id=fruits-vegetables")).toBeVisible();
+        
+        const iframe = page.frameLocator("id=the-kitchen-table");
+        const table = iframe.locator("id=fruits-vegetables");
+
+        await expect(table).toBeVisible();
     });
 
-    test('Round 4: Waiting', async ({ page }) => {
+    test('Round 3: Waiting', async ({ page }) => {
         await page.goto("https://automationbookstore.dev/");
         await page.locator("id=searchBar").fill("testing");
         await expect(page.locator("li:visible")).toHaveCount(1);
     });
 
-    test('Round 5: Accept Alerts', async ({ page }) => {
-        // By default, Playwright accepts all alerts.
-        // For this test, the following line is unnecessary, but it is included for the example:
-        page.on('dialog', dialog => dialog.accept())
+    test('Round 4: Accept Alerts', async ({ page }) => {
+        page.on('dialog', dialog => {
+            expect(dialog.message()).toBe("Airfryers can make anything!");
+            dialog.accept();
+        });
 
         await page.goto("https://kitchen.applitools.com/ingredients/alert");
         await page.locator("id=alert-button").click();
     });
 
-    test('Round 5: Dismiss Alerts', async ({ page }) => {
+    test('Round 4: Dismiss Alerts', async ({ page }) => {
         page.on('dialog', dialog => dialog.dismiss());
         await page.goto("https://kitchen.applitools.com/ingredients/alert");
         await page.locator("id=confirm-button").click();
     });
 
-    test('Round 5: Answer Prompts', async ({ page }) => {
+    test('Round 4: Answer Prompts', async ({ page }) => {
         page.on('dialog', dialog => dialog.accept("nachos"));
         await page.goto("https://kitchen.applitools.com/ingredients/alert");
         await page.locator("id=prompt-button").click();
     });
 
-    test('Round 6: Navigation to New Windows', async ({ page, context}) => {
+    test('Round 5: Navigation to New Windows', async ({ page, context}) => {
         await page.goto("https://kitchen.applitools.com/ingredients/links");
 
         let [newPage] = await Promise.all([
@@ -65,7 +65,7 @@ test.describe('Playwright', () => {
         await expect(newPage.locator("id=fruits-vegetables")).toBeVisible();
     });
 
-    test('Round 7: API Requests', async () => {
+    test('Round 6: API Requests', async () => {
         const requestContext = await request.newContext({baseURL: 'https://kitchen.applitools.com'});
         const response = await requestContext.get('api/recipes');
         await expect(response).toBeOK();
@@ -75,7 +75,7 @@ test.describe('Playwright', () => {
         expect(body.data.length).toBeGreaterThan(0);
     });
 
-    test('Round 8: Page Objects', async ({ page }) => {
+    test('Round 7: Page Objects', async ({ page }) => {
         const loginPage = new LoginPage(page);
         await loginPage.load();
         await loginPage.login("andy", "panda<3");
