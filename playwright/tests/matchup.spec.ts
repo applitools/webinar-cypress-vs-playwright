@@ -12,7 +12,7 @@ test.describe('Playwright', () => {
         await page.locator("id=password").fill("panda<3");
         await page.locator("id=log-in").click();
         
-        await expect(page.locator(".element-header").nth(0)).toHaveText("Financial Overview");
+        await expect(page.locator(".element-header").first()).toHaveText("Financial Overview");
     });
 
     test('Round 2: Inline Frames', async ({ page }) => {
@@ -81,7 +81,7 @@ test.describe('Playwright', () => {
         await loginPage.login("andy", "panda<3");
 
         const mainPage = new MainPage(page);
-        await expect(mainPage.headers.nth(0)).toHaveText("Financial Overview");
+        await expect(mainPage.headers.first()).toHaveText("Financial Overview");
     });
 
 });
