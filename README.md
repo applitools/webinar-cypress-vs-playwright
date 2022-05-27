@@ -1,4 +1,3 @@
-**WARNING: UPDATE THIS BANNER!**
 ![Banner Cypress versus Playwright: Let the Code Speak!](banner.png)
 
 
